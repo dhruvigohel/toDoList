@@ -2,9 +2,12 @@
 import React from 'react';
 import './todo.css';
 
-export default function ToDo({ task, delTodo, toggleTask, editTodo }) {
+export default function ToDo({ task, delTodo, toggleTask, editTodo, theme }) {
+
+    let classname = `todo${task.done ? 'completed' : ''}` + theme;
+    console.log(classname);
     return (
-        <div className={`todo ${task.done ? 'completed' : ''}`}>
+        <div className={classname}>
             <h1>
                 {task.id}. {task.task}
             </h1>

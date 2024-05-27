@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './editcss.css';
 
-export default function EditTodoForm({ editTodo, task }) {
+export default function EditTodoForm({ editTodo, task, theme }) {
     const [value, setValue] = useState(task.task);
 
     const handleSubmit = e => {
@@ -9,8 +9,10 @@ export default function EditTodoForm({ editTodo, task }) {
         editTodo(value, task.id);
     }
 
+    let newtheme = 'edit-form-' + theme;
+
     return (
-        <form className="edit-form" onSubmit={handleSubmit}>
+        <form className={newtheme} onSubmit={handleSubmit}>
             <input type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder="Edit task..." />
             <button type="submit">Edit Task</button>
         </form>

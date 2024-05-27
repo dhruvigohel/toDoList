@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './todoformcss.css';
 
-export default function TodoForm({ addTodo }) {
+export default function TodoForm({ addTodo, theme }) {
     const [value, setValue] = useState("");
+    let classname = 'form-container-' + theme;
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -11,8 +12,8 @@ export default function TodoForm({ addTodo }) {
     }
 
     return (
-        <form className="form-container" onSubmit={handleSubmit}>
-            <input className='addtask' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder="Add a new task..." />
+        <form className={classname} onSubmit={handleSubmit}>
+            <input className='addtask' type="text" value={value} onChange={(e) => setValue(e.target.value)} placeholder="Add a new task..." required minLength="3" />
             <button type="submit">Add Task</button>
         </form>
     )

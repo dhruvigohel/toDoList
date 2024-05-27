@@ -1,25 +1,51 @@
-/* todo.css */
-.todo {
+.todolight {
   padding: 10px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
   border-radius: 5px;
 }
 
-.todo.completed {
+.todo.completedlight {
   background-color: #e6e6e6;
 }
 
-.todo h1 {
+.todolight h1 {
   margin: 0;
   font-size: 16px;
 }
 
-.todo button {
+.todolight button {
   margin-left: 10px;
   padding: 5px 10px;
   background-color: #f44336;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tododark {
+  padding: 10px;
+  border: 1px solid #535C91;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.todo.completeddark {
+  background-color: #1B1A55;
+}
+
+.tododark h1 {
+  margin: 0;
+  font-size: 16px;
+  color:#1B1A55;
+}
+
+.tododark button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #535C91;
+  color: #ccc;
   border: none;
   border-radius: 5px;
   cursor: pointer;

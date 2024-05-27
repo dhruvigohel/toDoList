@@ -1,24 +1,50 @@
-.form-container {
+.form-container-light {
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 2%;
     padding-right: 2%;
-    margin: 2%;
+    
     margin-left: 2%;
     margin-right: 2%;
   }
   
-  .form-container input[type="text"] {
+  .form-container-light input[type="text"] {
     padding: 8px;
     width: 70%;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  .form-container button {
+  .form-container-light button {
     padding: 8px 12px;
     margin-left: 10px;
     background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-container-dark {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  
+  .form-container-dark input[type="text"] {
+    padding: 8px;
+    width: 70%;
+    border: 1px solid #070F2B;
+    border-radius: 5px;
+  }
+  
+  .form-container-dark button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    background-color: #1B1A55;
     color: white;
     border: none;
     border-radius: 5px;

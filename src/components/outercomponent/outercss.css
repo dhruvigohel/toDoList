@@ -1,5 +1,9 @@
-.outeraddtask {
+.outeradd-light {
     background-color: darkgoldenrod;
+}
+
+.outeradd-dark {
+    background-color: black;
 }
 
 .outertasks {
@@ -22,4 +26,16 @@ input[type=submit] {
 
   input[type=submit]:hover {
     background-color: #45a049;
+  }
+
+  .light {
+    min-height: 100vh;
+    height: 100%;
+    background-color:aqua;
+  }
+
+  .dark {
+    min-height: 100vh;
+    height: 100%;
+    background-color:#9290C3;
   }

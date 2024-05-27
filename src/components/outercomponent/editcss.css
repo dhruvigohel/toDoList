@@ -1,18 +1,39 @@
-.edit-form {
+.edit-form-light {
     margin-bottom: 20px;
   }
   
-  .edit-form input[type="text"] {
+  .edit-form-light input[type="text"] {
     padding: 8px;
     width: 70%;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
-  .edit-form button {
+  .edit-form-light button {
     padding: 8px 12px;
     margin-left: 10px;
     background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .edit-form-dark {
+    margin-bottom: 20px;
+  }
+  
+  .edit-form-dark input[type="text"] {
+    padding: 8px;
+    width: 70%;
+    border: 1px solid #070F2B;
+    border-radius: 5px;
+  }
+  
+  .edit-form-dark button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    background-color: #070F2B;
     color: white;
     border: none;
     border-radius: 5px;
