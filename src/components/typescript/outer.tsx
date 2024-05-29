@@ -16,10 +16,11 @@ const taskSchema = object().shape({
 });
 
 export default function Box() {
-    const [toDos, setTodos] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
+    type themetype = 'dark' | 'light';
+    const [toDos, setTodos] = useState<Array<object>>([]);
+    const [searchQuery, setSearchQuery] = useState<string>('');
     const [error, setError] = useState('');
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState<themetype>('light');
     const deferredquery = useDeferredValue(toDos);
 
     // useEffect(() => {
@@ -28,13 +29,15 @@ export default function Box() {
     // }, []);
 
     useEffect(() => {
-        const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
-        const savedTheme = JSON.parse(localStorage.getItem('theme')) || 'light';
+        const Ltodo  =localStorage.getItem('todos');
+        const savedTodos = Ltodo &&  (JSON.parse(Ltodo) || []);
+        const Ltheme = localStorage.getItem('theme');
+        const savedTheme = Ltheme && (JSON.parse(Ltheme) || 'light');
         setTodos(savedTodos);
         setTheme(savedTheme);
     }, []);
 
-    async function addTodo(toDo) {
+    async function addTodo(toDo: {id: number, task: string, completed: boolean, isEditing: boolean}) {
         try {
             //await taskSchema.validate({ task: toDo });
             const newTodos = [...toDos, { id: Date.now(), task: toDo, completed: false, isEditing: false }];
@@ -46,7 +49,7 @@ export default function Box() {
         }
     }
 
-    async function delTodo(id) {
+    async function delTodo(id: number) {
         const confirmed = await confirmDeletion();
         if (confirmed) {
             const newTodos = toDos.filter(toDo => toDo.id !== id);
@@ -55,27 +58,27 @@ export default function Box() {
         }
     }
 
-    async function confirmDeletion() {
+    function confirmDeletion() {
         return new Promise((resolve) => {
             const confirmed = window.confirm('Are you sure you want to delete this task?');
             resolve(confirmed);
         });
     }
 
-    function toggleTask(id) {
-        const newTodos = toDos.map(todo =>
-            todo.id === id ? { ...todo, done: !todo.done } : todo)
-        setTodos(newTodos);
-        localStorage.setItem('todos', JSON.stringify(newTodos));
+    function toggleTask(id: number) {
+        setTodos(toDos.map(todo =>
+            todo.id === id ? { ...todo, done: !todo.done } : todo
+        ));
+        localStorage.setItem('todos', JSON.stringify(toDos));
     }
 
-    function editTodo(id) {
+    function editTodo(id: number) {
         const newTodos = toDos.map(todo => todo.id === id ? {...todo, editing: !todo.editing} : todo);
         setTodos(newTodos);
         localStorage.setItem('todos', JSON.stringify(newTodos));
     }
 
-    const editTask = (task, id) => {
+    const editTask = (task: object, id: number) => {
         const newTodos = toDos.map((todo) =>
         todo.id === id ? { ...todo, task, editing: !todo.editing } : todo
       )

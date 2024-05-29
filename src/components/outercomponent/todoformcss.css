@@ -1,11 +1,6 @@
 .form-container-light {
     padding-top: 3%;
     padding-bottom: 3%;
-    padding-left: 2%;
-    padding-right: 2%;
-    
-    margin-left: 2%;
-    margin-right: 2%;
   }
   
   .form-container-light input[type="text"] {
@@ -13,11 +8,11 @@
     width: 70%;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 30%;
   }
   
   .form-container-light button {
     padding: 8px 12px;
-    margin-left: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -39,6 +34,7 @@
     width: 70%;
     border: 1px solid #070F2B;
     border-radius: 5px;
+    width: 30%;
   }
   
   .form-container-dark button {
@@ -49,10 +45,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-
-  .addtask {
-    width: 50px;
   }
 
   input[type=submit] {
